@@ -2,21 +2,20 @@ class Solution {
     // This function should return the second smallest integer found in the array.
     // You can assume the array has at least 2 different numbers.
     public int findSecondMin(int[] arr) {
-        // TODO: Write your logic here!
-        int firstmin = Math.min(arr[0],arr[1]);
-        int secmin = Math.max(arr[0],arr[1]);
-        for(int i=2;i<arr.length;i++){
-            if(arr[i]<firstmin){
-                secmin = firstmin;
-                firstmin = arr[i];
-            }
-            else if(arr[i]<secmin){
-                secmin=arr[i];
+        int fmin = Integer.MAX_VALUE;
+        int smin = Integer.MAX_VALUE;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i] < fmin){
+                smin = fmin;
+                fmin = arr[i];
+            }else if(arr[i] < smin){
+                smin = arr[i];
             }
         }
+        
 
         
-        return secmin; // Placeholder so the code compiles
+        return smin;// Placeholder so the code compiles
     }
 }
 

@@ -2,20 +2,18 @@ class Solution {
     // This function should return the second largest integer found in the array.
     // You can assume the array has at least 2 different numbers.
     public int findSecondMax(int[] arr) {
-        int fmax = Math.max(arr[1],arr[0]);
-        int smax = Math.min(arr[1],arr[0]);
-        for(int i=2; i<arr.length; i++){
-            if(arr[i]>fmax){
-                smax=fmax;
-                fmax=arr[i];
-            }
-            else if(arr[i]>smax){
-                smax=arr[i];
+        int fmax = Integer.MIN_VALUE;
+        int smax = Integer.MIN_VALUE;
+        for(int i=1; i<arr.length; i++){
+            if(arr[i] > fmax){
+                smax = fmax;
+                fmax = arr[i];
+            }else if(arr[i] > smax){
+                smax = arr[i];
             }
         }
-        return smax;
         
-        // Placeholder so the code compiles
+        return smax; // Placeholder so the code compiles
     }
 }
 
